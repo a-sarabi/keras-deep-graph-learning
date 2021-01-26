@@ -48,7 +48,7 @@ output = Activation('softmax')(output)
 nb_epochs = 200
 batch_size = 169
 
-model = Model(inputs=[X_input, graph_conv_filters_shape], outputs=output)
+model = Model(inputs=[X_input, graph_conv_filters_input], outputs=output)
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['acc'])
 model.fit([X, graph_conv_filters], Y, batch_size=batch_size, validation_split=0.1, epochs=nb_epochs, shuffle=True, verbose=1)
 
